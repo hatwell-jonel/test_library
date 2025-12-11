@@ -279,3 +279,7 @@ TA-DA! 🎉🎉🎉🎉
 ***
 ## CONGRATULATIONS 🎉🎉🎉🎉
 You have successfully published your React 19 component library to NPMJS.
+
+***
+## Author
+- LinkedIn - [Hatwell Jonel](https://www.linkedin.com/in/jonel-hatwell/)
