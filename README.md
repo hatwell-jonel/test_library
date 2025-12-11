@@ -1,4 +1,4 @@
-# Building a Library using React 19 Library with Vite, Tsup, and PNPM
+# How to build a library using React 19 Library with Vite, Tsup, and PNPM
 This guide details how to scaffold, configure, build, and publish a React 19 component library using TypeScript, Vite, and Tsup.
 ___
 
