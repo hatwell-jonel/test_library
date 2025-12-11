@@ -257,7 +257,7 @@ If you get an error:
 > 6. Copy the generated token string.
 > // **you have to create organization if you don't have one.**
 
-- 403 error regarding 2FA or granular access tokens—looks like this.
+- 403 error regarding 2FA or granular access tokens—looks like this. <br>
 ![Display 2](./public/readme_img/display_2.png)
 
 ### 3. Set Token 
@@ -272,7 +272,7 @@ Retry to publish the library:
 npm publish --access public
 ```
 
-TA-DA! 🎉🎉🎉🎉
+TA-DA! 🎉🎉🎉🎉 <br>
 ![Display 3](./public/readme_img/display_3.png)
 ![Display 4](./public/readme_img/display_4.png)
 
