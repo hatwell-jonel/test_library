@@ -125,7 +125,7 @@ Modify `package.json` to define entry points, scripts, and peer dependencies.
     "lint": "eslint .",
     "preview": "vite preview"
   },
-   "files": [
+   "files": [ // add this
     "dist"
   ],
   "dependencies": {
