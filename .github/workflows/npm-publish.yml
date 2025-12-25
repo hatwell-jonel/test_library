@@ -1,0 +1,50 @@
+# 🚀 Workflow name shown in GitHub Actions
+name: Publish to NPM
+
+# 🏷️ Trigger the workflow when a version tag is pushed
+# Example tags: v1.0.0, v2.3.4
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+# 🧩 Define all jobs in this workflow
+jobs:
+  # 📦 Job responsible for building and publishing the package
+  publish:
+    # 🐧 Run on GitHub's latest Ubuntu runner
+    runs-on: ubuntu-latest
+
+    # 🪜 Steps run one-by-one in order
+    steps:
+      # 📥 Clone the repository into the runner
+      - uses: actions/checkout@v4
+
+      # 🟢 Setup Node.js environment
+      # - Uses Node.js v20
+      # - Points npm to the official registry
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      # 📦 Install pnpm package manager
+      # - Ensures consistent pnpm version across CI
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      # 📚 Install dependencies
+      # --frozen-lockfile prevents accidental dependency changes
+      - run: pnpm install --frozen-lockfile
+
+      # 🛠️ Build the library before publishing
+      - run: pnpm tuts-test-library build
+
+      # 🚀 Publish the package to NPM
+      # --access public → makes the package public
+      # --no-git-checks → skips git validation in CI
+      - run: pnpm tuts-test-library publish --access public --no-git-checks
+        env:
+          # 🔐 Secure NPM token stored in GitHub Secrets
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
