@@ -39,7 +39,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       # 🛠️ Build the library before publishing
-      - run: pnpm tuts-test-library build
+      - run: pnpm build
 
       # 🚀 Publish the package to NPM
       # --access public → makes the package public
