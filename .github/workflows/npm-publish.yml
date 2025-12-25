@@ -44,7 +44,7 @@ jobs:
       # 🚀 Publish the package to NPM
       # --access public → makes the package public
       # --no-git-checks → skips git validation in CI
-      - run: pnpm tuts-test-library publish --access public --no-git-checks
+      - run: pnpm --access public --no-git-checks
         env:
           # 🔐 Secure NPM token stored in GitHub Secrets
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
